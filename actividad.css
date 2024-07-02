@@ -1,0 +1,292 @@
+body{
+    margin: 10px;
+    padding: 0;
+    background-color: bisque
+
+}
+
+/*Clase donde se configuran las dimensiones del grid*/
+.wrapper {
+    display: grid;
+    grid-template-columns: 150px auto auto auto;
+    grid-auto-rows: minmax(100px, auto);
+    gap: 10px;
+}
+
+
+/*  
+    Clase donde se configura el color y el estilo de borde de la zona del titulo
+    Se crea el grid para la disposicion del titulo menu y logo 
+    Se le asigna la posicion del grid de la calase "wrapper"
+*/
+.titulo {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(212, 151, 71);
+    background-color: burlywood;
+
+    min-width: 400px;
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,ifr);
+
+}
+
+
+/*Clase donde se centra el logo y se le asigna la posicion del grid de la calase "titulo"  */
+.logo{
+    padding: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1;
+    grid-row: 1/3;
+}
+
+/* Se le asigna el tamaño y el estilo de los bordes del logo */
+.logo img{
+    max-width: 50%;
+    max-height: 50%;
+    border-style: double;
+    border-color: black;
+}
+
+/* Clase donde se centra el titulo y se le asigna la posicion del grid de la calase "titulo"*/
+.nombre{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2 / 10;
+    grid-row: 1 / 2;
+}
+
+/*Se le asigan el color y el padding al titulo */
+.nombre h1{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: blanchedalmond;
+}
+
+.sesion{
+    grid-column: 9 / 10;
+    margin: 5px;
+    background-color: blanchedalmond;
+    border-radius: 5px;
+    text-align: center;
+    
+
+
+}
+
+.sesion a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin: 5%;
+}
+
+/* Clase menu donde donde se le asigana la posicion */
+.menu{
+    grid-column: 2 / 10;
+    grid-row: 2;
+    margin-bottom: 3%;
+}
+.menu nav{
+    text-align: center;
+    margin-top:20px ;
+}
+
+
+/*Se le asigna el estilo de cada uno de los elementos de la lista*/
+.menu nav li{
+    background-color: beige;
+    border-style: groove;
+    display: inline;
+}
+
+/*Se modifica el estilo de los enlaces*/
+.menu nav ul li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin: 5%;
+    
+}
+
+
+
+/*Se asigna la posicion y el estilo de la zona de enlaces de interes */
+.elementos {
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    border-radius: 10px;
+    padding: 10px;
+    grid-column: 1;
+    grid-row: 2 / 4;
+    background-color: burlywood;
+}
+
+/*Se modifica el estilo del titulo y de la lista de enlaces*/
+.elementos h3{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.elementos li{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.elementos ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.elementos a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+
+
+
+
+
+/*Se asigna la posicion y el estilo de la zona del pie de pagina */
+.pie {
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    grid-column: 1 / 5;
+    grid-row: 4 / 5;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    background-color: burlywood;
+}
+
+.Comentarios{
+    max-width: 300px;
+    grid-column: 4/5;
+    grid-row: 2 / 4;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    border-radius: 10px;
+    padding: 5px;
+    
+
+}
+
+
+
+/*  
+    Se asigna la posicion y el estilo de la zona de la descripcion de la actividad
+*/
+.descripcion{
+    min-width: 490px;
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    border-radius: 10px;
+    padding: 5px;
+    background-color: burlywood;
+   
+}
+
+/*Se cambia el estilo de los enlaces*/
+.descripcion a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+/* Se asigna la posicion de las imagenes con su pie de imagen*/
+.imagenes figure{
+    float: right;
+    text-align: center;
+    clear: both;
+    
+}
+
+/*Se asigna el estilo y la interraccion de los botones de redes sociales*/
+.botones img{
+    margin: 7px; 
+    padding: 5px;
+    border-radius: 10px;
+    background-color: blanchedalmond;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    max-width: 40px;
+    max-height: 40px;
+}
+.botones img:hover{
+    background-color: rgb(212, 151, 71);
+}
+.botones{
+    margin-top: 20px;
+    text-align: center;
+    
+}
+
+
+
+
+#MostrarComentarios{
+    margin-top: 20px;
+    text-align: center;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    background-color: blanchedalmond;
+}
+
+#MostrarComentarios:hover{
+    background-color: rgb(212, 151, 71);
+}
+
+
+
+.cajaComentario{
+    margin-top: 10px;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    grid-column: 2 / 5;
+    grid-row: 4 / 5;
+    background-color: rgba(238, 201, 153, 0.863);
+}
+
+.cajaComentario p {
+    margin: 5px;
+}
+
+.cajaComentario h5{
+    margin: 5px;
+}
+
+#comentarioNuevo{
+    margin-top: 20px;
+}
+
+.iconos img{
+    margin: 7px; 
+    padding: 5px;
+    max-width: 20px;
+    max-height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

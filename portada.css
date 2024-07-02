@@ -1,0 +1,371 @@
+body{
+    margin: 10px;
+    padding: 0;
+    background-color: bisque
+
+}
+
+/*Clase donde se configuran las dimensiones del grid*/
+.wrapper {
+    display: grid;
+    gap: 10px;
+    grid-auto-columns: minmax(100, auto);
+    grid-auto-rows: minmax(100px, 100px , auto);
+}
+
+
+
+
+/*  
+    Clase donde se configura el color y el estilo de borde de la zona del titulo
+    Se crea el grid para la disposicion del titulo menu y logo 
+    Se le asigna la posicion del grid de la calase "wrapper"
+*/
+.titulo {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(212, 151, 71);
+    background-color: burlywood;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,ifr);
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+}
+
+/*Clase donde se centra el logo y se le asigna la posicion del grid de la calase "titulo"  */
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1;
+    grid-row: 1/3;
+}
+/* Se le asigna el tamaño y el estilo de los bordes del logo */
+.logo img{
+    max-width: 60%;
+    max-height: 60%;
+    border-style: double;
+    border-color: black;
+}
+
+/* Clase donde se centra el titulo y se le asigna la posicion del grid de la calase "titulo"*/
+.nombre{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2 / 10;
+    grid-row: 1 / 2;
+}
+/*Se le asigan el color y el padding al titulo */
+.nombre h1{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: blanchedalmond;
+}
+
+.sesion{
+    grid-column: 9 / 10;
+    margin: 5px;
+    background-color: blanchedalmond;
+    border-radius: 5px;
+    text-align: center;
+    
+
+
+}
+
+.sesion a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin: 5%;
+}
+
+
+
+/* Clase menu donde donde se le asigana la posicion */
+.menu{
+    margin-bottom: 3%;
+    grid-column: 2 / 10;
+    grid-row: 2;
+}
+
+.menu nav{
+    text-align: center;
+    margin-top:20px ;
+}
+
+/*Se le asigna el estilo de cada uno de los elementos de la lista*/
+.menu nav li{
+    background-color: beige;
+    border-style: groove;
+    display: inline;
+}
+
+/*Se modifica el estilo de los enlaces*/
+.menu nav ul li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin: 5%;
+    
+}
+
+.buscador{
+    min-height: 20px;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: burlywood;
+    
+    grid-column: 1 / 5;
+    grid-row: 2; 
+
+}
+
+.buscador input{
+    width: 95%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(248, 236, 219);
+}
+
+#buscador::placeholder {
+    color: rgb(0, 0, 0);
+}
+
+#buscador:focus {
+    outline: none;
+}
+
+.resultado{
+    margin: 10px;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(248, 236, 219);
+    grid-column: 1 / 5;
+    grid-row: 3;
+
+}
+
+.resultado a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+
+
+/*Se asigna la posicion y el estilo de la zona de enlaces de interes */
+.elementos {
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    border-radius: 10px;
+    padding: 10px;
+    grid-column: 1;
+    grid-row: 3 / 6;
+    background-color: burlywood;
+}
+
+/*Se modifica el estilo del titulo y de la lista de enlaces*/
+.elementos h3{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.elementos li{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.elementos ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+.elementos a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+
+
+/*Se asigna la posicion y el estilo de la zona del pie de pagina */
+.pie {
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    grid-column: 1 / 5;
+    grid-row: 6;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    background-color: burlywood;
+}
+
+
+/*  
+    Se asigna la posicion y el estilo de la zona de actividades
+    Se crea el grid de las actividades
+*/
+.actividades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 10px;
+
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    border-radius: 10px;
+    padding: 5px;
+    background-color: burlywood;
+
+    grid-column: 2 / 5;
+    grid-row: 3 / 6;
+   
+}
+
+
+/*Se asigna el estilo de cada actividad, el enlace y la imagen */
+
+.actividad {
+    text-align: center;
+    border-style: solid;
+    border-color: rgb(146, 102, 49);
+    background-color: rgba(146, 102, 49, 0.762);
+    padding: 10px;
+    border-radius: 10px;
+}
+.actividad a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.actividad img {
+    max-width: 100%; 
+    max-height: 100%; 
+    margin-top: 10px;
+}
+
+.iconos img{
+    margin: 7px; 
+    padding: 5px;
+    border-radius: 10px;
+    background-color: blanchedalmond;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.actividadAñadir{
+    text-align: center;
+    border-style: solid;
+    border-color: rgb(146, 102, 49);
+    background-color: rgba(146, 102, 49, 0.762);
+    padding: 10px;
+    border-radius: 10px;
+    
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.actividadAñadir img {
+    max-width: 30%; 
+    max-height: 30%; 
+    margin: 7px; 
+    padding: 5px;
+    border-radius: 10px;
+    background-color: blanchedalmond;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+}
+
+.Comentarios{
+    
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    border-radius: 10px;
+    padding: 5px;
+    
+
+}
+
+.cajaComentario{
+    margin-top: 10px;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    grid-column: 2 / 5;
+    grid-row: 4 / 5;
+    background-color: rgba(238, 201, 153, 0.863);
+}
+
+.cajaComentario p {
+    margin: 5px;
+}
+
+.cajaComentario h5{
+    margin: 5px;
+}
+
+.comentario{
+    margin-top: 10px;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+
+}
+
+.comentario form{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: blanchedalmond;
+}
+
+.editActividad{
+    margin-top: 10px;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+}
+
+.editActividad form{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color:  blanchedalmond;
+}
+
+.editActividad textarea{
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(248, 236, 219);
+}
+
+.editActividad textarea.descripcionAct{
+    width: 90%;
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(248, 236, 219);
+}
+
+.cajaComentario img{
+    margin: 7px; 
+    padding: 5px;
+    border-radius: 10px;
+    background-color: blanchedalmond;
+    border-style: solid;
+    border-color: rgb(212, 151, 71);
+    max-width: 30px;
+    max-height: 30px;
+}
+
+
+

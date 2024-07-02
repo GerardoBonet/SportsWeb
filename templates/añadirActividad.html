@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+
+
+
+{% block listas %}   
+{% endblock %}
+
+{% block cabecera %}   
+{% endblock %}
+
+{% block menu %}   
+{% endblock %}
+
+
+
+
+
+{% block sesion %}   
+{% endblock %}
+
+
+{% block principal %}
+<div class="editActividad">
+    <form action="añadirActividad.php" method="post">
+        Nombre:<br> <textarea name="nombre"></textarea><br>
+        Lugar:<br> <textarea name="lugarAct"></textarea><br>
+        Coste:<br> <textarea name="costeAct"></textarea><br>
+        Fecha:<br> <textarea name="fechaAct"></textarea><br>
+        Descripcion:<br> <textarea name="descripcionAct" class="descripcionAct"></textarea><br>
+        Publicada:<br> <input type="checkbox" name="publicada" {% if datosActividad.publicada %}checked{% endif %} /><br>
+        Imagen:<br> <textarea name="imagen"></textarea><br>
+        Pie de foto:<br> <textarea name="pieFoto"></textarea><br>
+        
+
+        <br><input type="submit" value="Añadir" />
+    </form>
+
+</div>
+{% endblock %}
+
+    
+
+
+{% block botones %} 
+{% endblock %}  
+
+{% block elementos %}   
+{% endblock %}
+
+{%block galeria %}
+{% endblock %}
+
+{% block pie %}
+
+{% endblock %}

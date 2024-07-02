@@ -1,0 +1,137 @@
+ 
+{% extends "base.html" %}
+
+{%block script%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="peticionAjax.js"></script>
+{%endblock%}
+
+
+
+
+{% block icono %}  
+  <link rel="shortcut icon" href="{{ iconos[4] }}" type="image/x-icon">
+{% endblock %}
+
+{% block logo %}  
+  <a href="index.php"><img src="{{ iconos[5] }}" alt="prueba"/></a>
+{% endblock %}
+
+
+{% block sesion %} 
+    {% if not user%} 
+      <div class = "sesion"> <a href="sesionUsuario.php">Iniciar Sesion</a></div>
+    {% else%}
+      <div class = "sesion"> <a href="sesionUsuario.php">Cerrar Sesion</a></div>
+    {% endif %}
+    
+{% endblock %}
+
+
+
+{% block listas %}
+
+  {% if user.tipoUser == 1 or user.tipoUser == 2 or user.tipoUser == 3 or user.tipoUser == 4 %}
+    <div class = "sesion"> <a href="editarDatos.php">Editar datos</a></div>
+  {% endif %}
+
+  {% if user.tipoUser == 2 or user.tipoUser == 3 or user.tipoUser == 4 %}
+    <div class = "sesion"> <a href="listaComentarios.php">Lista Comentarios</a></div>
+  {% endif %}
+
+  {% if user.tipoUser == 3 or user.tipoUser == 4 %}
+    <div class = "sesion"> <a href="listaActividades.php">Lista Actividades </a></div>
+  {% endif %}
+
+  {% if user.tipoUser == 4 %}
+    <div class = "sesion"> <a href="listaUsuarios.php">Lista Usuarios</a></div>
+  {% endif %}
+
+ 
+{% endblock %}
+
+{% block titulo %}  
+  <h1>Actividades</h1>
+{% endblock %}
+
+{% block estilo %}  
+  <link rel="stylesheet" type="text/css" href=" portada.css">
+{% endblock %}
+
+
+
+
+
+
+
+{% block buscador %}
+
+<div class="buscador">
+    <input type="text" id="buscador" placeholder="Buscar actividad">
+
+    
+
+    {%if not user or user.tipoUser == 1 or user.tipoUser == 2 %}
+      <div id="resultados" class="resultados"></div>
+    {% elseif user.tipoUser == 3 or user.tipoUser == 4%}
+      <div id="resultados" class="resultados"></div>
+    {% endif %}
+
+
+</div>
+  
+
+ 
+    
+{% endblock %}
+
+
+
+
+
+
+
+
+{% block principal %}
+
+    {%if not user or user.tipoUser == 1 or user.tipoUser == 2 %}
+    <div class="actividades">
+
+      {% for actividad in actividades %}
+        {% if actividad.publicada%}
+        <div class="actividad"> <a href="actividad.php?id={{ actividad.idAct }}"> {{ actividad.nombreAct }} </a>
+        <a href="actividad.php?id={{ actividad.idAct }}"> <div> <img src="{{ actividad.imagen }}" alt="{{ actividad.nombre }}"/> </div> </a> </div>
+        {% endif %}
+      {% endfor %}
+      
+    </div>
+  
+  {% elseif user.tipoUser == 3 or user.tipoUser == 4%}
+
+  <div class="actividades">
+
+    {% for actividad in actividades %}
+      
+      <div class="actividad"> <a href="actividad.php?id={{ actividad.idAct }}"> {{ actividad.nombreAct }}  {% if not actividad.publicada%} (No publicada) {% endif %}</a>
+      <a href="actividad.php?id={{ actividad.idAct }}"> <div> <img src="{{ actividad.imagen }}" alt="{{ actividad.nombre }}"/> </div> </a> 
+        <div class="iconos">
+          <a href="editarActividad.php?id={{ actividad.idAct }}"> <img src="{{ iconos[7]}} " alt="editar"/></a>
+          <a href="eliminarActividad.php?id={{ actividad.idAct }}"> <img src="{{ iconos[8]}} " alt="elimiar"/></a>
+        </div>
+      </div>
+      
+      
+      {% endfor %}
+    <div class="actividadAñadir">
+      <a href="añadirActividad.php"> <img src="{{ iconos[6]}} " alt="editar"/></a>
+      
+    </div>
+    
+  </div>
+
+ 
+  {% endif %}
+
+{% endblock %}
+  
+

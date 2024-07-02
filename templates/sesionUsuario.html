@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block estilo %}
+<link rel="stylesheet"  href="sesionUsuario.css">
+{% endblock %}
+
+{% block menu %}   
+{% endblock %}
+
+{% block elementos %}   
+{% endblock %}
+
+{% block sesion %}   
+{% endblock %}
+
+
+{% block principal %}
+<div class="info">
+  {% if not user %}
+    <h1>No estas logueado</h1>
+    <button onclick="location.href='login.php'">Loguearse</button>
+  {% else %}
+    <h2>Sí estas logueado</h2>
+    <p>Tu nick es <strong>{{ user.nombreUser }}</strong></p>
+
+    {% if user.tipoUser == 1%}
+      <p>Eres un usuario registrado</p>
+    {% elseif user.tipoUser == 2%}
+      <p>Eres un moderador</p>
+    {% elseif user.tipoUser == 3%}
+      <p>Eres un gestor del sitio</p>
+    {% elseif user.tipoUser == 4%}
+      <p>Eres un superusuario</p>
+    {% endif %}
+    <button onclick="location.href='logout.php'">Cerrar Sesion</button>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block pie %}
+
+{% endblock %}
+
+
+

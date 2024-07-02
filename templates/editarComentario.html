@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block estilo %}
+
+<link rel="stylesheet"  href="portada.css">
+{% endblock %}
+
+{% block menu %}   
+{% endblock %}
+
+{% block elementos %}   
+{% endblock %}
+
+{% block sesion %}   
+{% endblock %}
+
+
+{% block principal %}
+<div class="comentario">
+    <form action="editarComentario.php" method="post">
+        <input type="hidden" name="idCom" value="{{comentario.idCom}}"/>
+        Fecha Comentario: {{comentario.fechaCom}} 
+        <br>
+        <br>
+
+        Texto:<br> <textarea name="textoCom">{{comentario.textoCom}}</textarea><br>
+        
+        <br><input type="submit" value="Guardar" />
+    </form>
+
+</div>
+{% endblock %}
+
+{% block pie %}
+
+{% endblock %}

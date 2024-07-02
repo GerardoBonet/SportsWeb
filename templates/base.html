@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  
+    <head>
+      {% block icono %}  
+        <link rel="shortcut icon" href="imagenes/icono.ico" type="image/x-icon">
+      {% endblock %}
+        <meta charset="utf-8" />
+        <title>Sierra Nevada</title>
+        {% block estilo %}
+        <link rel="stylesheet"  href="portada.css">
+        {% endblock %}
+
+        {% block script %}
+        
+        {% endblock %}
+    </head>
+
+    
+    
+    
+    
+
+    {% block tipoUser %}
+            
+    {% endblock %}
+
+    
+  <!--Clase con la que se dividen las desitintas zona de la pantalla -->
+  <div class="wrapper">
+    
+    
+
+    
+    <!--Zona del titulo, el menu horizontal y el logo -->
+    {% block cabecera %}
+    <header class="titulo">
+      <div class = "logo">
+        {% block logo %}   
+        <a href="index.php"><img src="imagenes/mountain.jpg" alt="prueba"/></a>
+        {% endblock %}
+      </div>
+
+      
+      
+
+      <div class = "nombre"> <h1>Deportes Bonet</h1></div>
+
+      
+      
+      
+      
+      {% block sesion %}   
+      
+      {% endblock %}
+
+      {% block listas %}
+      {% endblock %}
+      
+      {% block menu %}   
+      <!--Clase que contiene la zona del menu horizontal -->
+      <div class="menu">
+        <nav>
+          <ul>
+            <li><a href="">Menu 1</a></li>
+            <li><a href="">Menu 2</a></li>
+            <li><a href="">Menu 3</a></li>
+          </ul>
+        </nav>
+      </div>
+        {% endblock %}
+      
+      
+    </header>
+    {% endblock %}
+
+    <!--Zona de busqueda-->
+    <div  class="Busqueda"></div>
+
+    
+    {% block elementos %}   
+    <!--Zona de Elementos auxiliares-->
+    <div class="elementos"> <h3>Enlaces de interés</h3> 
+      <ul>
+        <li><a href="" >Hoteles</a></li>
+        <li><a href="" >Restaurantes</a></li>
+        <li><a href="" >Escuela de esqui</a></li>
+        <li><a href="" >Alquileres de equipos</a></li>
+        
+      </ul>
+    </div>
+    {% endblock %}
+
+    <!-- Zona de buscador -->
+
+    {% block buscador %}
+
+    {% endblock %}
+    
+
+    <!--Zona de las actividades -->
+    {% block principal %}
+    <p>Parte central</p>
+    {% endblock %}
+
+    {% block pie %}
+    
+    <footer class="pie">
+      <p>©2024-Gerardo Bonet</p>
+    </footer>
+
+    {% endblock %}
+    <!--Zona del pie de pagina-->
+    
+  </div>
+
+</html>

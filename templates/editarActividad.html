@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+
+
+
+{% block listas %}   
+{% endblock %}
+
+{% block cabecera %}   
+{% endblock %}
+
+{% block menu %}   
+{% endblock %}
+
+{% block buscador %}   
+{% endblock %}
+
+
+
+
+
+{% block sesion %}   
+{% endblock %}
+
+
+{% block principal %}
+<div class="editActividad">
+    <form action="editarActividad.php" method="post">
+        <input type="hidden" name="idAct" value="{{id}}"/>
+        Nombre:<br> <textarea name="nombre">{{datosActividad.nombreAct}}</textarea><br>
+        Lugar:<br> <textarea name="lugarAct">{{datosActividad.lugarAct}}</textarea><br>
+        Coste:<br> <textarea name="costeAct">{{datosActividad.costeAct}}</textarea><br>
+        Fecha:<br> <textarea name="fechaAct">{{datosActividad.fechaAct}}</textarea><br>
+        Descripcion:<br> <textarea name="descripcionAct" class="descripcionAct">{{datosActividad.descripcionAct}}</textarea><br>
+        Publicada:<br> <input type="checkbox" name="publicada" {% if datosActividad.publicada %}checked{% endif %} /><br>
+        
+
+        <br><input type="submit" value="Guardar" />
+    </form>
+
+</div>
+{% endblock %}
+
+    
+
+
+{% block botones %} 
+{% endblock %}  
+
+{% block elementos %}   
+{% endblock %}
+
+{%block galeria %}
+{% endblock %}
+
+{% block pie %}
+
+{% endblock %}

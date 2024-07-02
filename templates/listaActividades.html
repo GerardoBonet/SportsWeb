@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+
+
+
+{% block cabecera %}   
+{% endblock %}
+
+
+
+
+{% block principal %} 
+
+  <!--Zona de Comentarios-->
+
+  <div id="Comentarios" class="Comentarios">
+      
+    
+    <div id="comentarioExistentes">
+      {% for actividad in actividades %}
+      <div class="cajaComentario">
+          <h5>Nombre: {{ actividad.nombreAct }} {% if not actividad.publicada%} (No publicada) {% endif %}</h5>
+          <p>Descripcion:</p>
+          <p>{{ actividad.descripcionAct }}</p>
+          <a href="editarActividad.php?id={{ actividad.idAct }}"> <img src="{{ iconos[7]}} " alt="editar"/></a>
+      </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}
+
+{% block menu %}   
+{% endblock %}
+
+{% block botones %} 
+{% endblock %}  
+
+{% block elementos %}   
+{% endblock %}
+
+{%block galeria %}
+{% endblock %}
+
+{% block pie %}
+
+{% endblock %}

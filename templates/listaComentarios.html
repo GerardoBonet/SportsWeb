@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+
+
+{% block cabecera %}   
+{% endblock %}
+{% block buscador %}   
+{% endblock %}
+
+
+
+
+
+{% block principal %} 
+
+  <!--Zona de Comentarios-->
+
+  <div id="Comentarios" class="Comentarios">
+      
+    
+    <div id="comentarioExistentes">
+      {% for comentario in comentarios %}
+      <div class="cajaComentario">
+          <h5>Autor: {{ comentario.nombreUser }} Fecha: {{ comentario.fechaCom|date("d/m/Y, H:i") }} Actividad: {{comentario.nombreAct}}</h5>
+          <p>{{ comentario.textoCom }}</p>
+      </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}
+
+{% block menu %}   
+{% endblock %}
+
+{% block botones %} 
+{% endblock %}  
+
+{% block elementos %}   
+{% endblock %}
+
+{%block galeria %}
+{% endblock %}
+
+{% block pie %}
+
+{% endblock %}

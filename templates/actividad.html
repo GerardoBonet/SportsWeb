@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+
+ 
+
+{% block estilo %}
+      <link rel="stylesheet"   href="actividad.css">
+{% endblock %}
+
+{% block buscador %}
+{% endblock %}
+
+
+{% block principal %} 
+
+
+  <!--Zona de Comentarios-->
+
+  {%if not user%}
+
+  <div id="Comentarios" class="Comentarios" style="display: none;">
+      
+    
+    <div id="comentarioExistentes">
+      {% for comentario in actividad.comentarios %}
+      <div class="cajaComentario">
+          <h5>Autor: {{ comentario.nombreUser }} Fecha: {{ comentario.fechaCom|date("d/m/Y, H:i") }}</h5>
+          <p>{{ comentario.textoCom }}</p>
+      </div>
+    {% endfor %}
+    </div>
+    
+    
+</div>
+
+
+  {% elseif user.tipoUser == 1%}
+  <div id="Comentarios" class="Comentarios" style="display: none;">
+      
+    
+    <div id="comentarioExistentes">
+      {% for comentario in actividad.comentarios %}
+      <div class="cajaComentario">
+          <h5>Autor: {{ comentario.nombreUser }} Fecha: {{ comentario.fechaCom|date("d/m/Y, H:i") }}</h5>
+          <p>{{ comentario.textoCom }}</p>
+      </div>
+    {% endfor %}
+    </div>
+    
+    <form id="comentarioNuevo">
+        <textarea id="textoComentario" placeholder="Texto del comentario" ></textarea><br>
+        <button type="submit">Enviar</button>
+    </form> 
+    
+    
+</div>
+
+  {% elseif user.tipoUser == 2 or user.tipoUser == 3 or user.tipoUser == 4 %}
+  <div id="Comentarios" class="Comentarios" style="display: none;">
+      
+    
+    <div id="comentarioExistentes">
+      {% for comentario in actividad.comentarios %}
+      <div class="cajaComentario">
+          <h5>Autor: {{ comentario.nombreUser }} Fecha: {{ comentario.fechaCom|date("d/m/Y, H:i") }}</h5>
+          <p>{{ comentario.textoCom }}</p>
+          <div class="iconos">
+            <a href="editarComentario.php?idCom={{ comentario.idCom }}&idAct={{ id }}"> 
+              <img src="{{ iconos[7]}}" alt="editar"/>
+            </a>
+            <a href="eliminarComentario.php?idCom={{ comentario.idCom }}&idAct={{ id }}">
+                <img src="{{ iconos[8]}}" alt="eliminar"/>
+            </a>
+          </div>
+      </div>
+    {% endfor %}
+    </div>
+    
+    <form id="comentarioNuevo">
+        <textarea id="textoComentario" placeholder="Texto del comentario" ></textarea><br>
+        <button type="submit">Enviar</button>
+    </form> 
+    
+    
+</div>
+
+
+  {% endif %}
+
+
+  
+  
+
+  <!--Zona de la descripcion de la actividad -->
+  <div class="descripcion"> 
+    
+    <h2>{{actividad['nombreAct']}}</h2>
+
+    <!--Imagenes con su respectivo pie de pagina -->
+    <div class="imagenes" >
+
+      {% if imagenes is not empty%}
+            {% if imagenes|length > 2 %}
+            
+              <figure>
+                <img src ="{{ imagenes[0] }}" alt="escalada" >
+                <figcaption>{{ pies[0] }}</figcaption>
+              </figure>
+
+              <figure>
+                <img src ="{{ imagenes[1] }}" alt="escalada" >
+                <figcaption>{{ pies[1] }}</figcaption>
+              </figure>
+
+            {%else %}
+            {% for i in 0..(imagenes|length - 1) %}
+              <figure>
+                  <img src ="{{ imagenes[i] }}" alt="escalada">
+                  <figcaption>{{ pies[i]}}</figcaption>
+              </figure>
+            {% endfor %}
+            {% endif %}
+            
+      
+      
+      {% endif %}
+      
+      
+    </div>
+
+    <p>Fecha de realizacion: {{ actividad['fechaAct'] }} </p>
+    <p>Horario: 10:00 a 14:00</p>
+    <p>Lugar: {{actividad['lugarAct']}}</p>
+    <p>Coste: {{actividad['costeAct']}}</p>
+    <h3>Descripción: </h3>
+    
+    
+    
+    
+    <p>{{actividad['descripcionAct']}}</p>
+
+
+
+    
+
+
+
+
+    
+    <!-- Lista de enlaces de interes -->
+    <h3>Enlaces a otras paginas sobre con información de la actividad: </h3>
+    <ul>
+      <li><a href="https://es.wikipedia.org/wiki/Escalada" target="_blank">Wikipedia</a></li>
+      <li><a href="" target="_blank">SierraNevada.com</a></li>
+      <li><a href="" target="_blank">Informacion.es</a></li>
+    </ul>
+
+    
+    
+
+    {% block botones %}   
+    <!--Botones de redes sociales e imprimir-->
+    <div class="botones">
+      <a href=""><img src=" {{ iconos[0] }} " alt="twitter" > </a> 
+      <a href="actividad_imprimir.php?id={{id}}"> <img src="{{ iconos[1] }}" alt="imprimir" > </a>
+      <a href=""> <img src="{{ iconos[2] }}" alt="facebook" > </a>
+      <img id="MostrarComentarios" src="{{ iconos[3] }}" alt="comentarios">
+    </div> 
+    {% endblock %}
+
+    {%block galeria %}
+        <!-- Galeria de Imagenes -->
+        {% if imagenes is not empty and imagenes|length >= 2 %}
+        <h3>Galeria de imagenes: </h3>
+    
+        <div class="galeria">
+    
+          {% for imagen in imagenes %}
+            <img src="{{ imagen }}" alt="escalada" >
+        
+          {% endfor %}
+    
+        </div>
+    
+      
+        {% endif %}
+    {% endblock %}
+
+    <script src="comentarios.js"></script>
+  </div>
+
+  
+
+       
+{% endblock %}

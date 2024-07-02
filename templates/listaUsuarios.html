@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+
+
+
+{% block cabecera %}   
+{% endblock %}
+
+{% block buscador %}   
+{% endblock %}
+
+
+
+
+
+{% block principal %} 
+
+  <!--Zona de Comentarios-->
+
+  <div id="Comentarios" class="Comentarios">
+      
+    
+    <div id="comentarioExistentes">
+      {% for user in users %}
+      
+      <div class="cajaComentario">
+          <h5>Nombre: {{ user.nombreUser }}</h5>
+          <p>Correo:{{ user.correoUser }}</p>
+          {% if user.tipoUser == 1%}
+            <p>Rol: usuario registrado</p>
+            {% elseif user.tipoUser == 2%}
+            <p>Rol: moderador</p>
+            {% elseif user.tipoUser == 3%}
+            <p>Rol: gestor del sitio</p>
+            {% elseif user.tipoUser == 4%}
+            <p>Rol: superusuario</p>
+            {% endif %}
+          
+          <a href="editarUser.php?id={{ user.idUser }}"> <img src="{{ iconos[7]}} " alt="editar"/></a>
+      </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}
+
+{% block menu %}   
+{% endblock %}
+
+{% block botones %} 
+{% endblock %}  
+
+{% block elementos %}   
+{% endblock %}
+
+{%block galeria %}
+{% endblock %}
+
+{% block pie %}
+
+{% endblock %}

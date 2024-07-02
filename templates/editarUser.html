@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+
+
+
+{% block listas %}   
+{% endblock %}
+
+{% block cabecera %}   
+{% endblock %}
+
+{% block menu %}   
+{% endblock %}
+
+
+
+
+
+{% block sesion %}   
+{% endblock %}
+
+
+{% block principal %}
+<div class="editActividad">
+    <form action="editarUser.php" method="post">
+        <input type="hidden" name="idUser" value="{{id}}"/>
+        <strong>Nombre:</strong>  {{ user.nombreUser }} <br>
+        <strong>Roles de usuario:</strong><br>
+        1: Usuario registrado<br>
+        2: Moderador<br>
+        3: Gestor del sitio<br>
+        4: Superusuario<br><br>
+        <strong>Rol:</strong> <br> <textarea name="tipoUser"> {{ user.tipoUser }} </textarea><br>
+        
+        
+
+        <br><input type="submit" value="Guardar" />
+    </form>
+
+</div>
+{% endblock %}
+
+    
+
+
+{% block botones %} 
+{% endblock %}  
+
+{% block elementos %}   
+{% endblock %}
+
+{%block galeria %}
+{% endblock %}
+
+{% block pie %}
+
+{% endblock %}

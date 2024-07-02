@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block estilo %}
+
+<link rel="stylesheet"  href="login.css">
+{% endblock %}
+
+{% block menu %}   
+{% endblock %}
+
+{% block elementos %}   
+{% endblock %}
+
+
+
+
+{% block sesion %}   
+{% endblock %}
+
+
+{% block principal %}
+<div class="login">
+    <h1>Login</h1>
+    <form action="login.php" method="post">
+        Nick:<br><input type="text" name="nick" /><br>
+        Password:<br> <input type="password" name="contraseña" /><br>
+        <br><input type="submit" value="Loguearse" />
+    </form>
+
+    <h3> <a href="crearCuenta.php">Registrarse</a></h3>
+</div>
+{% endblock %}
+
+{% block pie %}
+
+{% endblock %}
+
+
+
+

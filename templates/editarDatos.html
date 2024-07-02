@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block estilo %}
+<link rel="stylesheet"  href="sesionUsuario.css">
+{% endblock %}
+
+{% block menu %}   
+{% endblock %}
+
+{% block elementos %}   
+{% endblock %}
+
+{% block sesion %}   
+{% endblock %}
+
+
+{% block principal %}
+<div class="info">
+    <form action="editarDatos.php" method="post">
+        <input type="hidden" name="idUser" value="{{user.idUser}}"/>
+        Rol: {{user.tipoUser}} <br>
+        Nombre<br> <textarea name="nombreUser">{{user.nombreUser}}</textarea><br>
+        Correo<br> <textarea name="correoUser" class = "correo">{{user.correoUser}}</textarea><br>
+        
+        <br><input type="submit" value="Guardar" />
+    </form>
+</div>
+{% endblock %}
+
+{% block pie %}
+
+{% endblock %}
+
+
+

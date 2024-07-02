@@ -1,0 +1,35 @@
+
+
+
+{% extends "base.html" %}
+
+{% block estilo %}
+
+<link rel="stylesheet"  href="crearCuenta.css">
+{% endblock %}
+
+{% block menu %}   
+{% endblock %}
+
+{% block elementos %}   
+{% endblock %}
+
+{% block sesion %}   
+{% endblock %}
+
+
+{% block principal %}
+<div class="login">
+    <h1>Login</h1>
+    <form action="crearCuenta.php" method="post">
+        Correo:<br><input type="text" name="email" /><br>
+        Nick:<br><input type="text" name="nick" /><br>
+        Password:<br> <input type="password" name="contraseña" /><br>
+        <br><input type="submit" value="Loguearse" />
+    </form>
+</div>
+{% endblock %}
+
+{% block pie %}
+
+{% endblock %}

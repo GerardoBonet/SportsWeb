@@ -1,0 +1,93 @@
+body{
+    margin: 30px;
+    padding: 0;
+    background-color: rgb(255, 255, 255)
+
+}
+
+/*Clase donde se configuran las dimensiones del grid*/
+.wrapper {
+    display: grid;
+    grid-template-columns: 150px auto auto auto;
+    grid-auto-rows: minmax(100px, auto);
+    gap: 10px;
+}
+
+
+/*Se asigna lo pisicion y el tamaño minimo del titulo*/
+.titulo {
+
+    min-width: 400px;
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    
+
+}
+/*Se asigna el tamaño del logo*/
+.titulo img{
+    max-width: 20%;
+    max-height: 20%;
+    border-style: double;
+    border-color: black;
+}
+
+
+/*Se asigna el estilo del nombre de la pagina*/
+.titulo h1{
+    text-decoration: underline;
+    font-style: italic;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/*Se ajusta la posicion del nombre de la pagina*/
+.nombre{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Se ajusta la posicion del logo*/
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*Se asigna la posicion y el estilo de la zona del pie de pagina */
+.pie {
+    text-align: center;
+    padding: 10px;
+    grid-column: 1 / 5;
+    grid-row: 4 / 5;
+}
+
+
+/*Se asigna la posicion y el estilo de la zona de la descripcion de la actividad*/
+.descripcion{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    min-width: 490px;
+    grid-column: 1 / 5;
+    grid-row: 2 / 4;
+    border-radius: 10px;
+    padding: 5px;
+   
+}
+
+/* Se asigna la posicion de las imagenes con su pie de imagen*/
+.imagenes figure{
+    float: right;
+    text-align: center;
+    clear: both;
+}
+
+/*Se cambia el estilo de los enlaces*/
+.descripcion a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+
+
+
+
